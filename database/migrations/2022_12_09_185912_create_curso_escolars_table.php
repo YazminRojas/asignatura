@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('curso_escolars', function (Blueprint $table) {
             $table->id();
+            $table->year('anyoInicio');
+            $table->year('anyoFin');
             $table->timestamps();
         });
     }
