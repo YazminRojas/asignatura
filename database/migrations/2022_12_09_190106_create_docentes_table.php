@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('numeroIdentificacion', 10);
             $table->string('nombre', 30);
-            $table->string('apellidoMaterno', 30);
             $table->string('apellidoPaterno', 30);
+            $table->string('apellidoMaterno', 30);
             $table->string('ciudad', 25);
             $table->string('direccion', 50);
             $table->string('telefono', 10);

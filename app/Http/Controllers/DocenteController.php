@@ -40,8 +40,8 @@ class DocenteController extends Controller
         $request->validate([
             'numeroIdentificacion'=>  'required',
             'nombre'              =>  'required',
-            'ApellidoMaterno'     =>  'required',
             'ApellidoPaterno'     =>  'required',
+            'ApellidoMaterno'     =>  'required',
             'ciudad'              =>  'required',
             'direccion'           =>  'required',
             'telefono'            =>  'required',
@@ -53,8 +53,8 @@ class DocenteController extends Controller
         $docente = new Docente([
             'numeroIdentificacion'=>  $request->get('numeroIdentificacion'),
             'nombre'              =>  $request->get('nombre'),
-            'ApellidoMaterno'     =>  $request->get('ApellidoMaterno'),
             'ApellidoPaterno'     =>  $request->get('ApellidoPaterno'),
+            'ApellidoMaterno'     =>  $request->get('ApellidoMaterno'),
             'ciudad'              =>  $request->get('ciudad'),
             'direccion'           =>  $request->get('direccion'),
             'telefono'            =>  $request->get('telefono'),
