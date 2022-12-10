@@ -15,9 +15,12 @@ return new class extends Migration
     {
         Schema::create('matriculas', function (Blueprint $table) {
             $table->id();
-            $table->foreign("id_alumno");
-            $table->foreign("id_asignatura");
-            $table->foreign("id_cursoEscolar");
+            $table->bigInteger('id_alumno')->unsigned();
+            $table->bigInteger('id_asignatura')->unsigned();
+            $table->bigInteger('id_curso_escolar')->unsigned();
+            $table->foreign('id_alumno')->references('id')->on('alumnos');
+            $table->foreign('id_asignatura')->references('id')->on('asignaturas');
+            $table->foreign('id_curso_escolar')->references('id')->on('curso_escolars');
             $table->timestamps();
         });
     }

@@ -24,7 +24,8 @@ return new class extends Migration
             $table->string('telefono', 10);
             $table->date('fechaNacimiento');
             $table->enum('sexo', ['H','M']);
-            $table->foreign("id_area");
+            $table->bigInteger('id_area')->unsigned();
+            $table->foreign('id_area')->references('id')->on('areas');
             $table->timestamps();
         });
     }
