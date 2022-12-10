@@ -2,17 +2,46 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+//------------------------------------------------------
+use App\Http\Controllers\GradoController;
+Route::resources([
+    'grados' => GradoController::class,
+]);
 
+use App\Http\Controllers\AreaController;
+Route::resources([
+    'areas' => AreaController::class,
+]);
+
+use App\Http\Controllers\AsignaturaController;
+Route::resources([
+    'asignaturas' => AsignaturaController::class,
+]);
+
+use App\Http\Controllers\AlumnoController;
+Route::resources([
+    'alumnos' => AlumnoController::class,
+]);
+
+use App\Http\Controllers\MatriculaController;
+Route::resources([
+    'matriculas' => MatriculaController::class,
+]);
+
+use App\Http\Controllers\DocenteController;
+Route::resources([
+    'docentes' => DocenteController::class,
+]);
+
+use App\Http\Controllers\CursoController;
+Route::resources([
+    'cursos' => CursoController::class,
+]);
+
+//----------------------------------------------
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
 });
+
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); 
