@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('curso_escolars', function (Blueprint $table) {
+        Schema::create('cursos', function (Blueprint $table) {
             $table->id();
             $table->year('anyoInicio');
             $table->year('anyoFin');
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('curso_escolars');
+        Schema::dropIfExists('cursos');
     }
 };
